@@ -6,11 +6,22 @@
     Provare a stampare sia con i template literals che con i nodi, manipolando il DOM.const 
 */
 
-// Prendo l'ul dal dom 
-const listContainer = document.getElementById('list-container');
+
+// Prendo l'elemento dal Dom
+const targetElement = document.getElementById('target') 
+// Preparo la lista 
+let listContainer = '<ul>'
 // Creao l'array con la lista della spesa
-const list = ['uova', 'latte', 'acqua', 'pasta'];
+const listArray = ['uova', 'latte', 'acqua', 'pasta'];
 
-
-
+// Assegno la variabile i fuori dal ciclo while 
 let i = 0
+while (i < listArray.length) {
+    listContainer += `<li> ${listArray[i]} </li>`;
+    i++;
+};
+
+// Chiudo l'ul della lista 
+listContainer += '</ul>';
+// Preparo l'elemento da stampare in pagina 
+targetElement.innerHTML = listContainer;
